@@ -1,0 +1,132 @@
+/* Glassmorphism Styles */
+.glass-card, .glass-nav, .glass-footer {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: var(--transition);
+}
+
+.glass-card {
+    background: var(--glass-background);
+    border-radius: 15px;
+    box-shadow: 0 8px 32px 0 var(--glass-shadow);
+    padding: 20px;
+}
+
+.glass-nav {
+    background: var(--glass-background);
+    border-bottom: 1px solid var(--glass-border);
+    box-shadow: 0 4px 30px var(--glass-shadow);
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    left: 0;
+    top: 0;
+    padding: 15px 5%;
+    display: flex;
+}
+
+.glass-footer {
+    background: transparent;
+    border-top: 1px solid var(--glass-border);
+    padding: 20px 0;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    text-align: center;
+}
+
+/* 3D Transform on Hover */
+.transform-on-hover {
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.transform-on-hover:hover {
+    transform: translateY(-10px) rotateX(5deg) rotateY(5deg);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+/* Buttonsssssssss */
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    text-align: center;
+}
+
+.primary-btn {
+    background: var(--primary-color);
+    color: white;
+    border: 2px solid var(--primary-color);
+}
+
+.primary-btn:hover {
+    background: var(--secondary-color);
+    border-color: var(--secondary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.secondary-btn {
+    background: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.secondary-btn:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Theme change */
+.theme-toggle {
+    margin-right: 20px;
+    position: relative;
+}
+
+.theme-switch {
+    opacity: 0;
+    position: absolute;
+}
+
+.switch-label {
+    background-color: var(--glass-background);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    position: relative;
+    height: 26px;
+    width: 50px;
+    transform: scale(1.2);
+}
+
+.switch-label i {
+    font-size: 14px;
+}
+
+.fa-sun { color: #f39c12; }
+.fa-moon { color: #f5f5f5; }
+
+.switch-label:after {
+    background: var(--primary-color);
+    border-radius: 50%;
+    content: "";
+    height: 18px;
+    left: calc(100% - 22px);
+    position: absolute;
+    top: 3px;
+    transition: 0.3s;
+    width: 18px;
+}
+
+.theme-switch:checked + .switch-label:after {
+    left: 4px;
+}
